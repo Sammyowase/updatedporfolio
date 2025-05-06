@@ -11,21 +11,21 @@ interface TimelineItem {
 
 const timeline: TimelineItem[] = [
   {
-    year: "2024",
-    title: "Senior Frontend Developer",
-    company: "Tech Corp",
-    description: "Leading the frontend development team and implementing modern web technologies."
+    year: "2025",
+    title: "Full stack Developer",
+    company: "Sea-Faj Consult",
+    description: "Leading the development team and implementing modern web technologies."
   },
   {
-    year: "2022",
+    year: "2025",
     title: "Full Stack Developer",
-    company: "Digital Solutions",
+    company: "Sail Innovation Lab",
     description: "Developed full-stack applications using Next.js, Node.js, and MongoDB."
   },
   {
-    year: "2020",
-    title: "Frontend Developer",
-    company: "Web Agency",
+    year: "2025",
+    title: "Backend Developer",
+    company: "Qmart",
     description: "Created responsive web applications with React and TypeScript."
   }
 ];
