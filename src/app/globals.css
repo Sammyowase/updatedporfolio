@@ -1,26 +1,107 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --border: 240 5% 64%;
+    --background: 240 10% 3.9%;
+    --primary: 246 100% 66%;
+    --secondary: 187 100% 53%;
+    --highlight: 331 91% 58%;
+    --text-primary: 240 5% 96%;
+    --text-secondary: 240 5% 65%;
+  }
+
+  .dark {
+    --border: 240 5% 26%;
+    --background: 240 10% 3.9%;
+    --primary: 246 100% 66%;
+    --secondary: 187 100% 53%;
+    --highlight: 331 91% 58%;
+    --text-primary: 240 5% 96%;
+    --text-secondary: 240 5% 65%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-text-primary;
+  }
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  @apply fixed pointer-events-none z-50 mix-blend-difference;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+/* Magnetic Button Effect */
+.magnetic-button {
+  @apply relative inline-block cursor-pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20;
+}
+
+/* Animated Gradient Background */
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    theme("colors.primary"),
+    theme("colors.secondary"),
+    theme("colors.highlight")
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Swiper Styles */
+.testimonials-swiper {
+  padding-bottom: 50px !important;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  @apply bg-text-secondary/50 w-2 h-2 transition-all duration-300;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  @apply bg-primary w-4;
+}
+
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  @apply text-primary transition-colors duration-300;
+}
+
+.testimonials-swiper .swiper-button-next:hover,
+.testimonials-swiper .swiper-button-prev:hover {
+  @apply text-secondary;
+}
+
+.testimonials-swiper .swiper-button-next::after,
+.testimonials-swiper .swiper-button-prev::after {
+  @apply text-2xl;
 }
