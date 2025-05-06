@@ -64,12 +64,12 @@ const projects: Project[] = [
   },
   
   {
-    title: "Project Six",
-    description: "Blockchain-based decentralized application.",
+    title: "Qmart",
+    description: "Qrcode payment.",
     image: "/projects/project6.jpg",
-    tags: ["Solidity", "Web3.js", "React"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project6",
+    tags: ["React", "Next.js", "Tailwind CSS", "MongoDB", "Nodejs", "Express", "Typescript"],
+    liveUrl: "https://qmart-frontend.onrender.com/",
+    githubUrl: "https://github.com/Sammyowase/qmart-frontend",
   },
 ];
 
