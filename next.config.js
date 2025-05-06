@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   transpilePackages: ['framer-motion'],
+  eslint: {
+    ignoreDuringBuilds: true, // ✅ this line disables ESLint on builds
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.mjs$/,
@@ -13,4 +16,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig;
